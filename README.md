@@ -1,11 +1,8 @@
 # React Web Worker Example
 
-## Contents
+## Demo
 
-- Avoid blocking UI by using web workers.
-- Be careful the length of arguments when passing them.
-- Limit the number of web workers.
-- How to pass a function through data to web worker but not recommended.
+[https://hsk-kr.github.io/react-webworker-example/](https://hsk-kr.github.io/react-webworker-example/)
 
 ## References
 
