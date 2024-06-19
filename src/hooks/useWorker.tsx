@@ -90,7 +90,10 @@ export const WorkerContextProvider = ({
     const newWorkers: WorkerPool[] = [];
 
     for (let i = 0; i < workerPoolNum; i++) {
-      newWorkers.push({ worker: new Worker('/worker.js'), status: 'ready' });
+      newWorkers.push({
+        worker: new Worker('/react-webworker-example/worker.js'),
+        status: 'ready',
+      });
     }
 
     setWorkers(newWorkers);
