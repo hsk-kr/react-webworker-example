@@ -21,7 +21,7 @@ const Test = () => {
   const log = () => {
     callWorker({
       funcName: 'log',
-      args: Array(100000).fill('test'),
+      args: Array(1000000).fill('test'),
       cb: () => {
         console.log('done');
       },
@@ -32,7 +32,7 @@ const Test = () => {
   };
 
   const logWithoutWorker = () => {
-    for (let i = 0; i < 100000; i++) {
+    for (let i = 0; i < 1000000; i++) {
       console.log('test');
     }
     console.log('done');
