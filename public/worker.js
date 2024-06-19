@@ -15,11 +15,11 @@ const log = (values) => {
 
 onmessage = (e) => {
   try {
-    let rst = [];
+    let rst;
 
     switch (e.data.funcName) {
       case 'sum': {
-        rst.push(sum(e.data.args));
+        rst = sum(e.data.args);
         break;
       }
       case 'log':

@@ -4,14 +4,6 @@ const Test = () => {
   const { callWorker } = useWorker();
 
   const sum = () => {
-    // let total = 0;
-
-    // for (let i = 0; i < 1000000000; i++) {
-    //   total += i;
-    // }
-
-    // console.log('done: ', total);
-
     callWorker({
       funcName: 'sum',
       args: Array(1000000)
@@ -27,14 +19,9 @@ const Test = () => {
   };
 
   const log = () => {
-    // for (let i = 0; i < 10000; i++) {
-    //   console.log('test');
-    // }
-    // console.log('done');
-
     callWorker({
       funcName: 'log',
-      args: Array(10000).fill('test'),
+      args: Array(100000).fill('test'),
       cb: () => {
         console.log('done');
       },
@@ -44,11 +31,19 @@ const Test = () => {
     });
   };
 
+  const logWithoutWorker = () => {
+    for (let i = 0; i < 100000; i++) {
+      console.log('test');
+    }
+    console.log('done');
+  };
+
   return (
     <div>
       <input type="text" />
       <button onClick={log}>Log</button>
       <button onClick={sum}>Sum</button>
+      <button onClick={logWithoutWorker}>Log Without Worker</button>
     </div>
   );
 };
@@ -62,9 +57,3 @@ function App() {
 }
 
 export default App;
-
-/**
- *
- *
- *
- */
